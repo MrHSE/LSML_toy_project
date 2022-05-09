@@ -19,9 +19,13 @@ Dataset is available here: https://dl.fbaipublicfiles.com/glue/superglue/data/v2
 
 ### Now let's describe the model architecture
 The way model built:
-* tokenizing words of each passage using BERT
-* getting passages embeddings by three ways: "mean", "min", "max" and "sum"
-* tokenizing words of each question using BERT
-* getting questions embeddings by three ways: "mean", "min", "max" and "sum"
-* getting cos similarity between question and passage
-* training RandomForestClassifier with cos similarities and labels
+1) tokenizing words of each passage using BERT pretrained model (I used "bert-base-uncased");
+2) getting passages embeddings by four ways: "mean", "min", "max" and "sum" of vectors got on stage 1;
+3) tokenizing words of each question using BERT;
+4) getting questions embeddings by four ways: "mean", "min", "max" and "sum"
+5) getting cosine similarity between question and passage vectors;
+6) training RandomForestClassifier with cosine similarities and labels with:
+    - 300 estimators
+    - unbounded maximum depth of a tree
+    - bootstrap True
+7) gini coef is used as a *loss metric*
