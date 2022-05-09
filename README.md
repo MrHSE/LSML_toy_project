@@ -43,4 +43,6 @@ EPOCHS = 10
 MAX_SEQ_LEN = 256
 optimizer = AdamW
 
+**Trained model** is available by this link from yandex disk: https://disk.yandex.ru/d/sHw_6SW8IuZYZw
+
 For evaluating model efficiency accuracy is used
