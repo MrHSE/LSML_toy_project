@@ -46,3 +46,11 @@ optimizer = AdamW
 **Trained model** is available by this link from yandex disk: https://disk.yandex.ru/d/sHw_6SW8IuZYZw
 
 For evaluating model efficiency accuracy is used
+
+## HTML frontend
+To deliver model to consumers a simple flask+html system was created.
+Flask with Jinja returns an HTML from by response with several fields:
+- Question;
+- Passage;
+- Answer.
+To get the answer you need to write your question, passage and submit it. After a second flask will return rendered HTML page with the answer.
