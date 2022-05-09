@@ -33,6 +33,7 @@ Project has two steps:
     - unbounded maximum depth of a tree
     - bootstrap True
 7) gini coef is used as a **loss metric**
+8) used such metrics as precision, recall and f1-score
 
 ### Second model
 "bert-base-uncased" BERT pretrained model is used
