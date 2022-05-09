@@ -1,0 +1,10 @@
+#log_form {
+	width: 50%;
+	min-width: 205px;
+	min-height: 120px;
+	max-width: 800px;
+	margin: 0 auto;
+	border-radius: 5px;
+	background-color: #C0C0C0;
+	padding: 7px;
+}

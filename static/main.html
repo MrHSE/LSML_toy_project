@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <link href="{{ url_for('static', filename='css/common.css') }}", type="text/css", rel="stylesheet" />
+        <link href="{{ url_for('static', filename='css/log_form.css') }}", type="text/css", rel="stylesheet" />
+        <title>Главная страница</title>
+    </head>
+    <body>
+        <div id="body">
+            <div id="content">
+                <div id="header">
+
+                </div>
+                <div id="main">
+                    <form action="http://127.0.0.1:5000", method="post">
+                    <h3>{{ announcement }}</h3>
+                    <fieldset id="log_form">
+                        <legend>Форма для ввода</legend>
+                        <label>Вопрос:<br />
+                            <input type="text", name="ques", size="50", maxlength="100", value={{ ques }} />
+                        </label><br />
+                        <label>Текст с ответом:<br />
+                            <input type="text", name="passage", size="50", maxlength="500", value={{ passage }} />
+                        </label><br />
+                        <label>Ответ:<br />
+                            <input type="text", name="response", size="50", maxlength="25", value={{ response }} />
+                        </label><br />
+  					        <input type="submit", value="Получить ответ"/>
+                    </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
