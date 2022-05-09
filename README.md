@@ -18,7 +18,11 @@ Each example is a triplet of (question, passage, answer), with the title of the 
 Dataset is available here: https://dl.fbaipublicfiles.com/glue/superglue/data/v2/BoolQ.zip
 
 ### Now let's describe the model architecture
-The way model built:
+Project has two steps:
+1) using pretrained BERT model without any additional learning as a word2vec model and training a classifier afterwards;
+2) updating BERT to return a classification and learning it to solve our problem.
+
+### The way first model built:
 1) tokenizing words of each passage using BERT pretrained model (I used "bert-base-uncased");
 2) getting passages embeddings by four ways: "mean", "min", "max" and "sum" of vectors got on stage 1;
 3) tokenizing words of each question using BERT;
@@ -28,4 +32,15 @@ The way model built:
     - 300 estimators
     - unbounded maximum depth of a tree
     - bootstrap True
-7) gini coef is used as a *loss metric*
+7) gini coef is used as a **loss metric**
+
+### Second model
+"bert-base-uncased" BERT pretrained model is used
+Global params for BERT learning are:
+BATCH_SIZE = 12
+LR = 1e-5
+EPOCHS = 10
+MAX_SEQ_LEN = 256
+optimizer = AdamW
+
+For evaluating model efficiency accuracy is used
