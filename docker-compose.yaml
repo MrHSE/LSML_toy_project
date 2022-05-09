@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  flask-server:
+    build:
+      context: . # Specify the directory where the Dockerfile is located
+    ports:
+      - 9090:8080 # Specify which ports to forward
+    volumes:
+      - ./:/sync-folder
